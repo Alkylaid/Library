@@ -9,8 +9,6 @@ const closeButton = document.getElementById('close-button')
 
 overlay.addEventListener('click', (e) => {
     let clicked = e.target;
-
-
     if (clicked.closest('#bookFormWrapper')){
         return;
     } else {
@@ -32,7 +30,6 @@ bookForm.addEventListener('submit', (e) => {
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pages').value;
     let read = document.getElementById('read').checked;
-    console.log(read);
     addBookToLibrary(title, author, pages, read);
     updateBookDisplay(title);
     overlay.classList.remove('active');
@@ -54,7 +51,7 @@ addBookToLibrary("Test Book", "Test", 234, true);
 updateBookDisplay("Test Book");
 
 function updateBookDisplay(title) {
-    let index = myLibrary.findIndex(book => {return book.title === title});
+    const index = myLibrary.findIndex(book => {return book.title === title});
     let div = document.createElement('div');
     div.classList.add('book');
     div.setAttribute('data-book-number', index);
@@ -81,12 +78,22 @@ function updateBookDisplay(title) {
     readStatus.setAttribute('id', "read-status");
     if(myLibrary[index].read) {
         readStatus.style.backgroundColor = "#22c55e";
-        readStatus.innerHTML = "Read";
+        readStatus.innerHTML = `<p id="read-status-text">Read</p>`;
     } else {
-        readStatus.innerHTML = "Not Read";
+        readStatus.innerHTML = `<p id="read-status-text">Not Read</p>`;
     }
-   
     div.appendChild(readStatus); 
 
+    const removeBookButton = document.createElement('div');
+    removeBookButton.setAttribute('id', 'remove-book');
+    readStatus.appendChild(removeBookButton);
+
+    removeBookButton.addEventListener('click', () => {
+        library.removeChild(div);
+        myLibrary = myLibrary.filter(book => book.title != title);
+        console.log(myLibrary);
+        
+    });
     library.insertBefore(div, createBookButton);
 }
+console.log(myLibrary);

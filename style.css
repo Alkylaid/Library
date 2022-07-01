@@ -33,7 +33,7 @@ body {
     border-radius: 20px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: repeat(4, auto);
     align-items: center;
 
 
@@ -233,10 +233,10 @@ button[type="submit"]:active{
     align-self: end;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
     font-size: 1.5rem;
+    box-shadow: 0px -1px 2px #5d6a7c; 
 
 }
 
@@ -260,4 +260,28 @@ button[type="submit"]:active{
 
 #close-button:hover{
     opacity: 1;
+}
+
+
+#read-status-text{
+   place-self: center;
+    margin: 0;
+}
+
+#remove-book{
+    background-color: #ff0000;
+    width: 50px;
+    height: 50px;
+    border-bottom-right-radius: 20px;
+    box-shadow: -1px 0px 1px #5d6a7c; 
+    transition: 0.2s;
+}
+
+#remove-book:active{
+    transform: scale(0.98);
+    box-shadow: 0px 0px 5px #5d6a7c; 
+}
+
+#remove-book:hover{
+    box-shadow: 0px 0px 2px #0b0b0c; 
 }
