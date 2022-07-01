@@ -16,6 +16,36 @@
         <div id="library">
         </div>
     </div>
+
+    <div id="overlay">
+        <div id="bookFormWrapper">
+        <h1>Add a Book</h1>
+        <form method="post" class="bookForm">
+            <div class="form_section">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="book_title" required>
+            </div>
+            <div class="form_section">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author_name" required>
+            </div>
+            <div class="form_section">
+                <label for="pages">Pages:</label>
+                <input type="number" name="page_numbers" id="pages" required>
+            </div>
+            <div class="form_section">
+                <label for="read">Read:</label>
+                <label class="readToggle" for="read">
+                    <input type="checkbox" class="toggle_input" id="read">
+                    <div class="slider"></div> </label>
+            </div>
+            <div class="form_section">
+                <span></span>
+                <button type="submit">Add Book</button>
+            </div>
+
+        </form>
+    </div></div>
 </body>
 
 </html>

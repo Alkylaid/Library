@@ -32,7 +32,7 @@ for (let book in myLibrary) {
 
 
     const authorName = document.createElement('p');
-    authorName.setAttribute('id',"author");
+    authorName.setAttribute('id',"author-name");
     authorName.innerHTML = `Author: ${myLibrary[book].author}`;
     div.appendChild(authorName);
 
