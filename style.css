@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 body {
     background-color: #334155;
     margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #header{
@@ -23,4 +26,12 @@ body {
     border-radius: 20px;
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    padding: 20px;
+}
+
+#book-title, #author, #page-numbers{
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
