@@ -1,6 +1,6 @@
 let myLibrary = [];
 
-const container = document.getElementById('container');
+const library = document.getElementById('library');
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -10,6 +10,7 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary(title, author, pages, read) {
+    
     myLibrary.push(new Book(title, author, pages , read));
 }
 
@@ -17,10 +18,29 @@ addBookToLibrary("Lord of the Rings", "J.R.R Tolkien", 300, true);
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, true);
 addBookToLibrary("Idoru", "William Gibson", 304, true);
 
+
 for (let book in myLibrary) {
     const div = document.createElement('div');
     div.classList.add('book');
     div.setAttribute('data-book-number', book);
-    div.textContent = `Title: ${myLibrary[book].title} Author: ${myLibrary[book].author} Pages: ${myLibrary[book].pages}`
-    container.appendChild(div);
+
+
+    const bookTitle = document.createElement('p');
+    bookTitle.setAttribute('id', bookTitle);
+    bookTitle.innerHTML = `Title: ${myLibrary[book].title}`;
+    div.appendChild(bookTitle);
+
+
+    const authorName = document.createElement('p');
+    authorName.setAttribute('id', authorName);
+    authorName.innerHTML = `Title: ${myLibrary[book].author}`;
+    div.appendChild(authorName);
+
+
+    const pageNumber = document.createElement('p');
+    pageNumber.setAttribute('id', pageNumber);
+    pageNumber.innerHTML = `Title: ${myLibrary[book].pages}`;
+    div.appendChild(pageNumber);
+
+    library.appendChild(div);
 }
