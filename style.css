@@ -92,7 +92,14 @@ body {
     margin: auto;
     background-color: rgba(0,0,0,0.5);
     text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
 
+#overlay.active{
+    visibility: visible;
+    opacity: 1;
 }
 
 #bookFormWrapper{
@@ -183,3 +190,31 @@ button[type="submit"]:hover{
 button[type="submit"]:active{
     box-shadow: 0 0 10px #0ea5e9;
 }
+
+#createBook {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    padding: 20px;
+    outline: 2px dashed #22c55e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img/plus-icon1.svg');
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.4s;
+}
+
+#createBook:hover{
+    box-shadow: 0 0 10px #22c55e;
+    background-image: url('img/plus-icon2.svg');
+
+}
+
+#createBook:active{
+    transform: scale(0.95);
+}
+
+
