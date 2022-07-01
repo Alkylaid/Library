@@ -4,18 +4,36 @@ const library = document.getElementById('library');
 const createBookButton = document.getElementById('createBook');
 const overlay = document.getElementById('overlay');
 const bookForm = document.getElementById('bookForm');
+const closeButton = document.getElementById('close-button')
+
+
+overlay.addEventListener('click', (e) => {
+    let clicked = e.target;
+
+
+    if (clicked.closest('#bookFormWrapper')){
+        return;
+    } else {
+        overlay.classList.remove('active');
+    }});
 
 createBookButton.addEventListener('click', () => {
     overlay.classList.add('active');
 });
+
+closeButton.addEventListener('click', () => {
+    overlay.classList.remove('active');
+    bookForm.reset();
+})
 
 bookForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pages').value;
-    let read = document.getElementById('read').value;
-    addBookToLibrary(title, author, pages,);
+    let read = document.getElementById('read').checked;
+    console.log(read);
+    addBookToLibrary(title, author, pages, read);
     updateBookDisplay(title);
     overlay.classList.remove('active');
     bookForm.reset();
@@ -32,10 +50,12 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(new Book(title, author, pages , read));
 }
+addBookToLibrary("Test Book", "Test", 234, true);
+updateBookDisplay("Test Book");
 
 function updateBookDisplay(title) {
-    const index = myLibrary.findIndex(book => {return book.title === title});
-    const div = document.createElement('div');
+    let index = myLibrary.findIndex(book => {return book.title === title});
+    let div = document.createElement('div');
     div.classList.add('book');
     div.setAttribute('data-book-number', index);
 
@@ -57,5 +77,16 @@ function updateBookDisplay(title) {
     pageNumber.innerHTML = `Pages: ${myLibrary[index].pages}`;
     div.appendChild(pageNumber);
 
-    library.appendChild(div);
+    const readStatus = document.createElement('div');
+    readStatus.setAttribute('id', "read-status");
+    if(myLibrary[index].read) {
+        readStatus.style.backgroundColor = "#22c55e";
+        readStatus.innerHTML = "Read";
+    } else {
+        readStatus.innerHTML = "Not Read";
+    }
+   
+    div.appendChild(readStatus); 
+
+    library.insertBefore(div, createBookButton);
 }
