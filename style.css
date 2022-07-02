@@ -15,15 +15,17 @@ body {
 
 #header {
     width: 100%;
-    height: 10vh;
-    background-color: black;
+    height: 15vh;
+ 
+    color: #fff;
+    border-bottom: 1px solid black;
 }
 
 #library {
     margin: 50px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    column-gap: 50px;
+    gap: 50px;
 }
 
 .book {
@@ -35,6 +37,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
     align-items: center;
+
 
 
 
@@ -188,6 +191,7 @@ button[type="submit"]{
     font-size: 0.9rem;
     font-weight: 600;
     padding: 10px;
+    cursor: pointer;
 
 }
 
@@ -203,7 +207,7 @@ button[type="submit"]:active{
     width: 300px;
     height: 300px;
     border-radius: 20px;
-
+    cursor: pointer;
     outline: 2px dashed #22c55e;
     display: flex;
     justify-content: center;
@@ -269,12 +273,18 @@ button[type="submit"]:active{
 }
 
 #remove-book{
+    content: "&#9447";
     background-color: #ff0000;
     width: 50px;
     height: 50px;
     border-bottom-right-radius: 20px;
     box-shadow: -1px 0px 1px #5d6a7c; 
     transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.6rem;
 }
 
 #remove-book:active{
@@ -283,5 +293,24 @@ button[type="submit"]:active{
 }
 
 #remove-book:hover{
-    box-shadow: 0px 0px 2px #0b0b0c; 
+    box-shadow: 0px 0px 3px #0b0b0c; 
+}
+
+#add-book-corner-button{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: url('img/plus-circle-outline.svg') no-repeat center, #22c55e;
+    background-size: 40px;
+    box-shadow: 0px 0px 5px #22c55e;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#add-book-corner-button:hover{
+    transform: scale(1.05) rotate(90deg);
+    box-shadow: 0px 0px 10px #22c55e;
 }
