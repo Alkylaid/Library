@@ -12,46 +12,53 @@
 
 <body>
     <div class="container">
-        <div id="header">Libary</div>
+        <div id="header">
+            <img src="img/bookshelf.svg" alt="bookshelf icon" id="bookshelf-icon">
+            <p id="my-library-title">My Library</p>
+        </div>
         <div id="library">
             <div id="createBook" title="Click to add a book"><span class="plus-icon"></span>
-               </div>
+            </div>
         </div>
         <div id="add-book-corner-button" title="Click to add a book"></div>
     </div>
 
     <div id="overlay">
         <div id="bookFormWrapper">
-            <div id="bookFormHeader"><h1>Add a Book</h1>
-                <div id="close-button">&#10006</div></div>
-        
-        <form method="post" class="bookForm" id="bookForm">
-            <div class="form_section">
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="book_title" required>
-            </div>
-            <div class="form_section">
-                <label for="author">Author:</label>
-                <input type="text" id="author" name="author_name" required>
-            </div>
-            <div class="form_section">
-                <label for="pages">Pages:</label>
-                <input type="number" name="page_numbers" id="pages" required>
-            </div>
-            <div class="form_section">
-                <label for="read">Read:</label>
-                <label class="readToggle" for="read">
-                    <input type="checkbox" class="toggle_input" id="read">
-                    <div class="slider"></div> </label>
-            </div>
-            <div class="form_section">
-                <span></span>
-                <button type="submit" id="addBook">Add Book</button>
+            <div id="bookFormHeader">
+                <h1>Add a Book</h1>
+                <div id="close-button">&#10006</div>
             </div>
 
-        </form>
-    </div></div>
-   
+            <form method="post" class="bookForm" id="bookForm">
+                <div class="form_section">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="book_title" required>
+                </div>
+                <div class="form_section">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author_name" required>
+                </div>
+                <div class="form_section">
+                    <label for="pages">Pages:</label>
+                    <input type="number" name="page_numbers" id="pages" required>
+                </div>
+                <div class="form_section">
+                    <label for="read">Read:</label>
+                    <label class="readToggle" for="read">
+                        <input type="checkbox" class="toggle_input" id="read">
+                        <div class="slider"></div>
+                    </label>
+                </div>
+                <div class="form_section">
+                    <span></span>
+                    <button type="submit" id="addBook">Add Book</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>

@@ -1,5 +1,4 @@
 let myLibrary = [];
-
 const library = document.getElementById('library');
 const createBookButton = document.getElementById('createBook');
 const overlay = document.getElementById('overlay');
@@ -51,6 +50,7 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(new Book(title, author, pages, read));
+
 }
 
 
